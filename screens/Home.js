@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import ClassesScreen from './Classes'
+import { ClassesScreen } from './Classes'
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
