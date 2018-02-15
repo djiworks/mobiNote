@@ -24,9 +24,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  squareBorder: {
+    padding: 10,
+    width: 150,
+    height: 150,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 3,
+    borderStyle: 'dashed',
+    borderColor: 'darkturquoise',
+  },
 
   white: {
     color: 'white',
+    fontSize: 15,
+  },
+
+  darkturquoise: {
+    color: 'darkturquoise',
     fontSize: 15,
   },
   modalContainer: {
@@ -54,7 +70,7 @@ const styles = StyleSheet.create({
 export class ClassComponent extends React.Component {
   render() {
     return (
-      <TouchableOpacity style={styles.square}>
+      <TouchableOpacity style={styles.square} onPress={this.props.onPress}>
         <Icon type="font-awesome" name="graduation-cap" size={45} color="white" />
         <Text style={styles.white}>{ this.props.text }</Text>
       </TouchableOpacity>
@@ -85,7 +101,7 @@ export class NewClassComponent extends React.Component {
       <View>
         <Modal
           visible={this.state.modalVisible}
-          animationType={'slide'}
+          animationType="slide"
           onRequestClose={() => this.closeModal()}
         >
           <View style={styles.modalContainer}>
@@ -115,9 +131,6 @@ export class NewClassComponent extends React.Component {
                 ref={input => this.desc = input}
                 placeholder="Notes..."
                 inputStyle={styles.input}
-                numberOfLines={3}
-                multiline={true}
-                autoGrow={true}
               />
               <View style={styles.buttons}>
                 <Button
@@ -138,9 +151,9 @@ export class NewClassComponent extends React.Component {
             </View>
           </View>
         </Modal>
-        <TouchableOpacity style={styles.square} onPress={() => this.openModal()}>
-          <Icon type="font-awesome" name="plus" size={50} color="white" />
-          <Text style={styles.white}>Nouveau</Text>
+        <TouchableOpacity style={styles.squareBorder} onPress={() => this.openModal()}>
+          <Icon type="font-awesome" name="plus" size={50} color="darkturquoise" />
+          <Text style={styles.darkturquoise}>Nouveau</Text>
         </TouchableOpacity>
       </View>
     );

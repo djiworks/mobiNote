@@ -1,7 +1,11 @@
 import { StackNavigator } from 'react-navigation';
 
-import HomeScreen from './screens/Home';
+import ClassesScreen from './screens/Classes';
+import StudentsScreen from './screens/Students';
+import StudentScreen from './screens/StudentDetails';
 
 export default StackNavigator({
-  Home: { screen: HomeScreen },
+  Home: { screen: ClassesScreen },
+  Students: { screen: StudentsScreen },
+  Student: { screen: StudentScreen },
 });
